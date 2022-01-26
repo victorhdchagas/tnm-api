@@ -5,22 +5,22 @@ import logo from '../assets/TaNaMaoProject.png';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {FloatingLabelInput} from 'react-native-floating-label-input';
 
-class IndexView extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {keyboardHeight:0};
-  }
-  componentDidMount(){
+// class IndexView extends React.Component {
+//   constructor(props){
+//     super(props);
+//     this.state = {keyboardHeight:0};
+//   }
+//   componentDidMount(){
 
-  }
-  ComponentWillUnmount(){
-    
-  }
+//   }
+//   ComponentWillUnmount(){
 
-  render(){
+//   }
 
-  }
-}
+//   render(){
+
+//   }
+// }
 
 function IndexView({navigation}) {
   const [showPassword, setShowPassword] = useState(false);
