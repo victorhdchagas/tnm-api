@@ -1,9 +1,20 @@
-import {Dimensions, StyleSheet, StyleSheetProperties} from 'react-native';
+import {
+  Dimensions,
+  StyleSheet,
+  // StyleSheetProperties,
+  ImageStyle,
+  ViewStyle,
+  // FlexStyle,
+  TextStyle,
+  StyleProp,
+} from 'react-native';
 
 const dimScreen = Dimensions.get('screen');
 
-const logoStyle = {
+const logoStyle: StyleProp<ImageStyle> = {
   height: 100,
+  width: 250,
+  resizeMode: 'stretch',
 };
 
 const defaultBackgrounds = {
@@ -15,13 +26,13 @@ const defaultBackgrounds = {
     background: '#6558F4',
   },
 };
-const defaultViewContainer = {
+const defaultViewContainer: StyleProp<ViewStyle> = {
   alignItems: 'center',
   paddingHorizontal: 20,
   width: dimScreen.width,
 };
 
-const defaultButtonProperties = {
+const defaultButtonProperties: StyleProp<ViewStyle> = {
   backgroundColor: defaultBackgrounds.button.background,
   alignItems: 'center',
   justifyContent: 'center',
@@ -31,7 +42,7 @@ const defaultButtonProperties = {
   elevation: 3,
 };
 
-const defaultInputProperties = {
+const defaultInputProperties: StyleProp<TextStyle> = {
   color: '#000',
   borderColor: defaultBackgrounds.input.outline,
   borderWidth: 2,
@@ -40,20 +51,17 @@ const defaultInputProperties = {
   padding: 20,
   backgroundColor: defaultBackgrounds.input.background,
 };
+// const imageStyle = StyleSheet.create();
 
 const myStyles = StyleSheet.create({
   container: {flex: 1, padding: 10, backgroundColor: '#ccc'},
   inputText: defaultInputProperties,
   viewContainer: defaultViewContainer,
   button: defaultButtonProperties,
-  logoStyle: {
-    width: 250,
-    height: logoStyle.height,
-    resizeMode: 'stretch',
-  },
+  logoStyle: logoStyle,
   header: {
     flex: 1,
-    minHeight: logoStyle.height + 20,
+    minHeight: logoStyle.height,
     flexWrap: 'nowrap',
     justifyContent: 'center',
   },

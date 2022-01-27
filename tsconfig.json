@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "jsx": "react-native",
+    "lib": ["es2017"],
+    "moduleResolution": "node",
+    "noEmit": true,
+    "strict": true,
+    "target": "esnext",
+    "skipLibCheck": true,
+    "typeRoots": ["node_modules/@types", "src/custom-types"], 
+    "types": ["react", "react-native", "jest"]
+  },
+    "include": ["views/**/*"]
+  ,
+  "exclude": [
+    "node_modules",
+    "node_modules/*",
+    "node_modules/*",
+    "./node_modules",
+    "babel.config.js",
+    "metro.config.js",
+    "node_modules/react-native-reanimated",
+    "node_modules/react-native-floating-label-input/src",
+    "jest.config.js"
+  ]
+}

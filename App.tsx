@@ -5,12 +5,14 @@ import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-
-const Stack = createNativeStackNavigator();
+import { RootStackParamList } from './types/types';
+// const Stack = createNativeStackNavigator();
 
 const navigatorOptions = {
   headerShown: false,
 }; // Need to verify at https://reactnavigation.org/docs/native-stack-navigator/
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 import Index from './views/Index';
 import Login from './views/Login';
