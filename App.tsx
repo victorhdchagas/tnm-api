@@ -5,7 +5,8 @@ import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import { RootStackParamList } from './types/types';
+import {RootStackParamList} from './types/types';
+import Fontisto from 'fontisto';
 // const Stack = createNativeStackNavigator();
 
 const navigatorOptions = {
@@ -17,6 +18,7 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 import Index from './views/Index';
 import Login from './views/Login';
 import Register from './views/Register';
+import Menu from './views/Menu';
 const Flex = () => {
   return (
     <SafeAreaProvider>
@@ -25,6 +27,7 @@ const Flex = () => {
           <Stack.Screen name="Index" component={Index} />
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="Register" component={Register} />
+          <Stack.Screen name="Menu" component={Menu} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>

@@ -10,7 +10,7 @@ import {
 import myStyles from '../styles/myApp';
 import logo from '../assets/TaNaMaoProject.png';
 
-function LoginView() {
+function LoginView({navigation}) {
   console.log(myStyles.inputText);
   return (
     <SafeAreaView style={[{flex: 1}, myStyles.viewContainer]}>
@@ -30,7 +30,10 @@ function LoginView() {
           style={[myStyles.inputText, {marginTop: 10}]}
           placeholder="Senha"
         />
-        <Pressable title="Entrar" style={[myStyles.button, {marginTop: 20}]}>
+        <Pressable
+          title="Entrar"
+          style={[myStyles.button, {marginTop: 20}]}
+          onPress={() => navigation.navigate('Menu')}>
           <Text style={{color: '#fff'}}>Entrar</Text>
         </Pressable>
       </View>
