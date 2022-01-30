@@ -9,6 +9,7 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {RootStackParamList} from '../types/types';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import BottomMenu from '../src/components/BottomMenu';
 type ProfileScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
   'Index'
@@ -30,23 +31,16 @@ function IndexView({navigation}: Props) {
           }}
         />
       </View>
-      <View style={[{flex: 3}, myStyles.viewContainer]}>
-        <View
-          style={{
-            position: 'absolute',
-            bottom: 0,
-            left: 0,
-            width: 100,
-          }}>
-          <Text>
-            <Icon.Button
-              name="facebook"
-              backgroundColor="#3b5998"
-              onPress={this.loginWithFacebook}>
-              Login with Facebook
-            </Icon.Button>
-          </Text>
-        </View>
+      <View
+        style={[
+          {
+            flex: 3,
+            width: '100%',
+            padding: 0,
+            margin: 0,
+          },
+        ]}>
+        <BottomMenu />
       </View>
     </SafeAreaView>
   );

@@ -3,11 +3,27 @@ import React from 'react';
 // import {StyleSheet, Text, View} from 'react-native';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 
-import {NavigationContainer} from '@react-navigation/native';
+import {NavigationContainer, DarkTheme} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {RootStackParamList} from './types/types';
-import Fontisto from 'fontisto';
+// import Fontisto from 'fontisto';
 // const Stack = createNativeStackNavigator();
+
+import Index from './views/Index';
+import Login from './views/Login';
+import Register from './views/Register';
+import Menu from './views/Menu';
+
+const myTheme = {
+  ...DarkTheme,
+  dark: true,
+  colors: {
+    ...DarkTheme.colors,
+    primary: 'rgb(255,45,85)',
+    background: 'rgb(69, 31, 85)',
+    text: 'rgb(251, 176, 52)',
+  },
+};
 
 const navigatorOptions = {
   headerShown: false,
@@ -15,14 +31,10 @@ const navigatorOptions = {
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
-import Index from './views/Index';
-import Login from './views/Login';
-import Register from './views/Register';
-import Menu from './views/Menu';
 const Flex = () => {
   return (
     <SafeAreaProvider>
-      <NavigationContainer>
+      <NavigationContainer theme={myTheme}>
         <Stack.Navigator screenOptions={navigatorOptions}>
           <Stack.Screen name="Index" component={Index} />
           <Stack.Screen name="Login" component={Login} />

@@ -28,10 +28,14 @@ const defaultBackgrounds = {
 };
 const defaultViewContainer: StyleProp<ViewStyle> = {
   alignItems: 'center',
-  paddingHorizontal: 20,
   width: dimScreen.width,
 };
 
+const defaultMenuIcons: StyleProp<Text> = {
+  color: 'rgb(251, 176, 52)',
+  margin: 10,
+  fontSize: 24,
+};
 const defaultButtonProperties: StyleProp<ViewStyle> = {
   backgroundColor: defaultBackgrounds.button.background,
   alignItems: 'center',
@@ -71,6 +75,7 @@ const myStyles = StyleSheet.create({
   justifyCenter: {justifyContent: 'center'},
   buttonWidth80: {width: '80%'},
   lineHeight40: {lineHeight: 40},
+  menuButton: defaultMenuIcons,
 });
 
 export default myStyles;
