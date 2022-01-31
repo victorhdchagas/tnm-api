@@ -5,14 +5,14 @@ import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 import {NavigationContainer, DarkTheme} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {RootStackParamList} from './types/types';
+import {RootStackParamList} from './src/types/types';
 // import Fontisto from 'fontisto';
 // const Stack = createNativeStackNavigator();
 
-import Index from './views/Index';
-import Login from './views/Login';
-import Register from './views/Register';
-import Menu from './views/Menu';
+import Index from './src/views/Index';
+import Login from './src/views/Login';
+import Register from './src/views/Register';
+import Menu from './src/views/Menu';
 
 const myTheme = {
   ...DarkTheme,

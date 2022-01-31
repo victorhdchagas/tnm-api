@@ -11,6 +11,21 @@ import {
 
 const dimScreen = Dimensions.get('screen');
 
+const viewFooterMenuWrapper: StyleProp<ViewStyle> = {
+  flex: 1,
+  // backgroundColor: 'blue',
+  justifyContent: 'space-around',
+  // alignContent: 'space-around',
+  flexDirection: 'row',
+  width: dimScreen.width,
+  position: 'absolute',
+  bottom: 0,
+  left: 0,
+};
+const colors = {
+  buttonColor: 'rgb(251, 176, 52)',
+};
+
 const logoStyle: StyleProp<ImageStyle> = {
   height: 100,
   width: 250,
@@ -31,10 +46,15 @@ const defaultViewContainer: StyleProp<ViewStyle> = {
   width: dimScreen.width,
 };
 
-const defaultMenuIcons: StyleProp<Text> = {
-  color: 'rgb(251, 176, 52)',
-  margin: 10,
-  fontSize: 24,
+const defaultMenuIcons: StyleProp<ViewStyle> = {
+  marginBottom: 10,
+  // backgroundColor: 'black',
+  flexGrow: 1,
+  flexBasis: 0,
+};
+const defaultMenuText: StyleProp<TextStyle> = {
+  color: colors.buttonColor,
+  textAlign: 'center',
 };
 const defaultButtonProperties: StyleProp<ViewStyle> = {
   backgroundColor: defaultBackgrounds.button.background,
@@ -73,9 +93,15 @@ const myStyles = StyleSheet.create({
   flex2: {flex: 2},
   flex3: {flex: 3},
   justifyCenter: {justifyContent: 'center'},
+  directionCol: {flexDirection: 'column'},
+  directionRow: {flexDirection: 'row'},
+  alignSelfCenter: {alignSelf: 'center'},
+  buttomIcon: {alignSelf: 'center', color: colors.buttonColor},
   buttonWidth80: {width: '80%'},
   lineHeight40: {lineHeight: 40},
   menuButton: defaultMenuIcons,
+  menuButtonText: defaultMenuText,
+  FooterMenuWrapper: viewFooterMenuWrapper,
 });
 
 export default myStyles;

@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {View, Image, Text, Pressable, KeyboardAvoidingView} from 'react-native';
 import myStyles from '../styles/myApp';
 // @ts-ignore
-import logo from '../assets/TaNaMaoProject.png';
+import logo from '../../assets/TaNaMaoProject.png';
 import {SafeAreaView} from 'react-native-safe-area-context';
 // @ts-ignore
 import {FloatingLabelInput} from 'react-native-floating-label-input';

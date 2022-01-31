@@ -1,41 +1,58 @@
 import React from 'react';
-import {Component, ReactNode} from 'react';
-import {Pressable, View, Text} from 'react-native';
+import {Pressable, View, Text, Dimensions} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import myStyles from '../../styles/myApp';
-class BottomMenu extends Component {
-  render(): ReactNode {
-    return (
-      <>
-        <View
-          style={{
-            flex: 1,
-            justifyContent: 'space-around',
-            flexDirection: 'row',
-            width: '100%',
-            position: 'absolute',
-            bottom: 0,
-            left: 0,
-          }}>
-          <Pressable>
-            <Text style={myStyles.menuButton}>
-              <Icon name="home" size={44} />
-            </Text>
-          </Pressable>
-          <Pressable>
-            <Text style={myStyles.menuButton}>
-              <Icon name="qrcode" size={44} />
-            </Text>
-          </Pressable>
-          <Pressable>
-            <Text style={myStyles.menuButton}>
-              <Icon name="bars" size={44} />
-            </Text>
-          </Pressable>
-        </View>
-      </>
-    );
-  }
+import myStyles from '../styles/myApp';
+import useCustomNav from '../components/goTo';
+const dimScreen = Dimensions.get('window');
+
+function BottomMenuFC() {
+  const navigator = useCustomNav();
+
+  const handleNavIndex = () => {
+    console.log('clicked');
+    navigator.goTo('Index');
+  };
+
+  return (
+    <>
+      <Text>{dimScreen.width}</Text>
+      <View style={myStyles.FooterMenuWrapper}>
+        <Pressable onPress={handleNavIndex}>
+          <View
+            style={[
+              myStyles.menuButton,
+              myStyles.directionCol,
+              {minWidth: dimScreen.width / 3},
+            ]}>
+            <Icon name="home" size={44} style={myStyles.buttomIcon} />
+            <Text style={myStyles.menuButtonText}>Meus Espaços</Text>
+          </View>
+        </Pressable>
+        <Pressable onPress={handleNavIndex}>
+          <View
+            style={[
+              myStyles.menuButton,
+              myStyles.directionCol,
+              {minWidth: dimScreen.width / 3},
+            ]}>
+            <Icon name="qrcode" size={44} style={myStyles.buttomIcon} />
+            <Text style={myStyles.menuButtonText}>Parear</Text>
+          </View>
+        </Pressable>
+        <Pressable onPress={handleNavIndex}>
+          <View
+            style={[
+              myStyles.menuButton,
+              myStyles.directionCol,
+              {minWidth: dimScreen.width / 3},
+            ]}>
+            <Icon name="bars" size={44} style={myStyles.buttomIcon} />
+            <Text style={myStyles.menuButtonText}>Seilá</Text>
+          </View>
+        </Pressable>
+      </View>
+    </>
+  );
 }
 
-export default BottomMenu;
+export default BottomMenuFC;

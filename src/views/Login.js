@@ -8,7 +8,7 @@ import {
   Pressable,
 } from 'react-native';
 import myStyles from '../styles/myApp';
-import logo from '../assets/TaNaMaoProject.png';
+import logo from '../../assets/TaNaMaoProject.png';
 
 function LoginView({navigation}) {
   console.log(myStyles.inputText);

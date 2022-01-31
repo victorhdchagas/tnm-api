@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Image, Text, Pressable} from 'react-native';
 import myStyles from '../styles/myApp';
 // @ts-ignore
-import logo from '../assets/TaNaMaoProject.png';
+import logo from '../../assets/TaNaMaoProject.png';
 // import {SafeAreaView} from 'react-native-screens';
 // @ts-ignore
 import {SafeAreaView} from 'react-native-safe-area-context';

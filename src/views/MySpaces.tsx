@@ -20,7 +20,7 @@ type Props = {
 function IndexView({navigation}: Props) {
   console.log(typeof navigation, navigation);
   return (
-    <SafeAreaView style={[{flex: 1}, myStyles.viewContainer]}>
+    <SafeAreaView style={[myStyles.flex1, myStyles.viewContainer]}>
       <View style={{flex: 3, justifyContent: 'center'}}>
         <Image
           source={logo}
