@@ -9,8 +9,11 @@ function BottomMenuFC() {
   const navigator = useCustomNav();
 
   const handleNavIndex = () => {
-    console.log('clicked');
-    navigator.goTo('Index');
+    navigator.goTo('MySpaces');
+  };
+
+  const handleNavSettings = () => {
+    navigator.goTo('GeneralSettings');
   };
 
   return (
@@ -39,15 +42,15 @@ function BottomMenuFC() {
             <Text style={myStyles.menuButtonText}>Parear</Text>
           </View>
         </Pressable>
-        <Pressable onPress={handleNavIndex}>
+        <Pressable onPress={handleNavSettings}>
           <View
             style={[
               myStyles.menuButton,
               myStyles.directionCol,
               {minWidth: dimScreen.width / 3},
             ]}>
-            <Icon name="bars" size={44} style={myStyles.buttomIcon} />
-            <Text style={myStyles.menuButtonText}>Seilá</Text>
+            <Icon name="gear" size={44} style={myStyles.buttomIcon} />
+            <Text style={myStyles.menuButtonText}>Configurações</Text>
           </View>
         </Pressable>
       </View>

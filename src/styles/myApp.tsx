@@ -26,6 +26,12 @@ const colors = {
   buttonColor: 'rgb(251, 176, 52)',
 };
 
+const defaultListItem = {
+  Title: {
+    fontSize: '1em',
+  },
+};
+
 const logoStyle: StyleProp<ImageStyle> = {
   height: 100,
   width: 250,
@@ -102,6 +108,7 @@ const myStyles = StyleSheet.create({
   menuButton: defaultMenuIcons,
   menuButtonText: defaultMenuText,
   FooterMenuWrapper: viewFooterMenuWrapper,
+  ListItem: defaultListItem,
 });
 
 export default myStyles;

@@ -1,5 +1,5 @@
-import React from 'react';
-import {View, Image, Text, Pressable} from 'react-native';
+import React, {useEffect} from 'react';
+import {View, Image, BackHandler} from 'react-native';
 import myStyles from '../styles/myApp';
 // @ts-ignore
 import logo from '../../assets/TaNaMaoProject.png';
@@ -15,6 +15,19 @@ type Props = {
   navigation: ProfileScreenNavigationProp;
 };
 function IndexView({navigation}: Props) {
+  useEffect(() => {
+    const backAction = () => {
+      navigation.navigate('Menu');
+      return true;
+    };
+
+    const backHandler = BackHandler.addEventListener(
+      'hardwareBackPress',
+      backAction,
+    );
+
+    return () => backHandler.remove();
+  }, []);
   console.log(typeof navigation, navigation);
   return (
     <SafeAreaView style={[{flex: 1}, myStyles.viewContainer]}>
