@@ -49,7 +49,7 @@ const defaultBackgrounds = {
 };
 const defaultViewContainer: StyleProp<ViewStyle> = {
   alignItems: 'center',
-  width: dimScreen.width,
+  // width: dimScreen.width,
 };
 
 const defaultMenuIcons: StyleProp<ViewStyle> = {
@@ -84,7 +84,7 @@ const defaultInputProperties: StyleProp<TextStyle> = {
 // const imageStyle = StyleSheet.create();
 
 const myStyles = StyleSheet.create({
-  container: {flex: 1, padding: 10, backgroundColor: '#ccc'},
+  container: { flex: 1, padding: 10, backgroundColor: '#ccc' },
   inputText: defaultInputProperties,
   viewContainer: defaultViewContainer,
   button: defaultButtonProperties,
@@ -95,20 +95,30 @@ const myStyles = StyleSheet.create({
     flexWrap: 'nowrap',
     justifyContent: 'center',
   },
-  flex1: {flex: 1},
-  flex2: {flex: 2},
-  flex3: {flex: 3},
-  justifyCenter: {justifyContent: 'center'},
-  directionCol: {flexDirection: 'column'},
-  directionRow: {flexDirection: 'row'},
-  alignSelfCenter: {alignSelf: 'center'},
-  buttomIcon: {alignSelf: 'center', color: colors.buttonColor},
-  buttonWidth80: {width: '80%'},
-  lineHeight40: {lineHeight: 40},
+  flex1: { flex: 1 },
+  alignAllCenter: {
+    justifyContent: 'center',
+    alignContent: 'center',
+  },
+  flex2: { flex: 2 },
+  flex3: { flex: 3 },
+  justifyCenter: { justifyContent: 'center' },
+  directionCol: { flexDirection: 'column' },
+  directionRow: { flexDirection: 'row' },
+  alignSelfCenter: { alignSelf: 'center' },
+  buttomIcon: { alignSelf: 'center', color: colors.buttonColor },
+  buttonWidth80: { width: '80%' },
+  lineHeight40: { lineHeight: 40 },
   menuButton: defaultMenuIcons,
   menuButtonText: defaultMenuText,
   FooterMenuWrapper: viewFooterMenuWrapper,
   ListItem: defaultListItem,
+  reverseFlex1: {
+    flex: 1,
+    flexDirection: 'column-reverse',
+    // height: dimScreen.height,
+    minHeight: dimScreen.height * 0.86,
+  },
 });
 
 export default myStyles;

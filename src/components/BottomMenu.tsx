@@ -9,7 +9,7 @@ function BottomMenuFC() {
   const navigator = useCustomNav();
 
   const handleNavIndex = () => {
-    navigator.goTo('MySpaces');
+    navigator.goTo('SpacesArea');
   };
 
   const handleNavSettings = () => {

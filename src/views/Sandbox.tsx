@@ -1,80 +1,128 @@
-import React, {useState} from 'react';
-import {Alert, Modal, StyleSheet, Text, Pressable, View} from 'react-native';
+import {useTheme} from '@react-navigation/native';
+import React, {useReducer} from 'react';
+import {Text, View} from 'react-native';
+import {TouchableOpacity} from 'react-native-gesture-handler';
+import {Modalize} from 'react-native-modalize';
+// import Modalize from 'react-native-modalize';
+import {ModalSpaces} from '../components/modalSpaces';
+import myStyles from '../styles/myApp';
+const Sandbox = () => {
+  // const onOpen = ()=>{
+  const reducerFN = (state, action) => {
+    switch (action.type) {
+      case 'DEV':
+        return 'DEV AREA';
+      case 'PROD':
+        return 'PRODUCTION';
+      default:
+        return 'DEV';
+    }
+  };
+  const [env, setEnv] = useReducer(reducerFN, 'DEV');
+  const {colors} = useTheme();
 
-const App = () => {
-  const [modalVisible, setModalVisible] = useState(false);
+  const ref = React.createRef<Modalize>();
+
+  // }
+  const onOpen = () => {
+    ref.current?.open();
+  };
   return (
-    <View style={styles.centeredView}>
-      <Modal
-        animationType="slide"
-        transparent={true}
-        visible={modalVisible}
-        onRequestClose={() => {
-          Alert.alert('Modal has been closed.');
-          setModalVisible(!modalVisible);
-        }}>
-        <View style={styles.centeredView}>
-          <View style={styles.modalView}>
-            <Text style={styles.modalText}>Hello World!</Text>
-            <Pressable
-              style={[styles.button, styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}>
-              <Text style={styles.textStyle}>Hide Modal</Text>
-            </Pressable>
-          </View>
+    <>
+      <View
+        style={[
+          myStyles.flex1,
+          // myStyles.alignAllCenter,
+          myStyles.directionCol,
+          {
+            justifyContent: 'flex-start',
+            alignItems: 'stretch',
+          },
+        ]}>
+        <View
+          style={{
+            flex: 1,
+            // height: 120,
+            backgroundColor: colors.darkerBackground,
+            justifyContent: 'flex-start',
+            alignContent: 'stretch',
+          }}>
+          <Text>Teste</Text>
+          {/* <Image
+          source={space.image}
+          resizeMode="contain"
+          style={{
+            width: '50%',
+            backgroundColor: '#fff',
+            alignSelf: 'center',
+          }}
+        /> */}
         </View>
-      </Modal>
-      <Pressable
-        style={[styles.button, styles.buttonOpen]}
-        onPress={() => setModalVisible(true)}>
-        <Text style={styles.textStyle}>Show Modal</Text>
-      </Pressable>
-    </View>
+        <View style={{flex: 4}}>
+          <Text>Texto</Text>
+          <Text>Texto</Text>
+          <Text>Texto</Text>
+          <Text>Texto</Text>
+          <Text>Texto</Text>
+          <Text>Texto</Text>
+          <Text>Texto</Text>
+          <Text>Texto</Text>
+          <Text>Texto</Text>
+          <Text>Texto</Text>
+          <Text>Texto</Text>
+          <Text>Texto</Text>
+        </View>{' '}
+        <Modalize
+          ref={modalizeRef}
+          snapPoint={400}
+          scrollViewProps={{contentContainerStyle: {height: '100%'}}}
+          modalStyle={{backgroundColor: colors.background}}>
+          <View
+            style={[
+              myStyles.flex1,
+              // myStyles.alignAllCenter,
+              myStyles.directionCol,
+              {
+                justifyContent: 'flex-start',
+                alignItems: 'stretch',
+              },
+            ]}>
+            <View
+              style={{
+                flex: 1,
+                // height: 120,
+                backgroundColor: colors.darkerBackground,
+                // justifyContent: 'flex-start',
+                // alignContent: 'stretch',
+              }}>
+              <Image
+                source={space.image}
+                resizeMode="contain"
+                style={{
+                  width: '50%',
+                  backgroundColor: '#fff',
+                  alignSelf: 'center',
+                }}
+              />
+            </View>
+            <View style={{flex: 4}}>
+              <Text>Texto</Text>
+              <Text>Texto</Text>
+              <Text>Texto</Text>
+              <Text>Texto</Text>
+              <Text>Texto</Text>
+              <Text>Texto</Text>
+              <Text>Texto</Text>
+              <Text>Texto</Text>
+              <Text>Texto</Text>
+              <Text>Texto</Text>
+              <Text>Texto</Text>
+              <Text>Texto</Text>
+            </View>
+          </View>
+        </Modalize>
+      </View>
+    </>
   );
 };
-
-const styles = StyleSheet.create({
-  centeredView: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 22,
-  },
-  modalView: {
-    margin: 20,
-    backgroundColor: 'white',
-    borderRadius: 20,
-    padding: 35,
-    alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
-    elevation: 5,
-  },
-  button: {
-    borderRadius: 20,
-    padding: 10,
-    elevation: 2,
-  },
-  buttonOpen: {
-    backgroundColor: '#F194FF',
-  },
-  buttonClose: {
-    backgroundColor: '#2196F3',
-  },
-  textStyle: {
-    color: 'white',
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
-  modalText: {
-    marginBottom: 15,
-    textAlign: 'center',
-  },
-});
-
-export default App;
+export default Sandbox;
