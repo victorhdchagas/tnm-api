@@ -1,6 +1,4 @@
-# Terceira Publicação #
-![Image](https://i.imgur.com/pi9CJOW.jpg=200x200)
-_Alimentando conhecimento_
+
 ___
 ## Tecnologias
 > 1- React
